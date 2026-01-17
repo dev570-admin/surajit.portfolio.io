@@ -52,9 +52,7 @@ h2::after {
   border-radius: 4px;
 }
 
-p {
-  color: var(--muted);
-}
+
 
 /* ---------- HERO ---------- */
 .hero {
@@ -87,6 +85,14 @@ p {
   margin-bottom: 25px;
 }
 
+.hero-location {
+  color: #63d4e1;
+  padding-top: 0px;
+  padding-bottom: 17px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .hero-btns a {
   display: inline-block;
   padding: 14px 28px;
@@ -112,14 +118,17 @@ p {
 /* ---------- QUICK SCAN (30s HR VIEW) ---------- */
 .scan {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
   margin-top: 40px;
 }
+
 
 .scan-box {
   background: var(--card);
   padding: 18px;
+  width: 350px;
+  height: 200px;
   border-radius: 10px;
   border-top: 4px solid var(--accent);
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
@@ -129,6 +138,37 @@ p {
   margin-bottom: 8px;
   font-size: 0.95rem;
   color: var(--text);
+}
+
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.skill-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.skill-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.scan-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transition: 0.25s ease;
 }
 
 /* ---------- ABOUT ---------- */
@@ -218,21 +258,43 @@ footer {
   .hero h1 {
     font-size: 2.4rem;
   }
-  .hero h1 small {
-  font-size: 24px;
+  .hero-location {
+  font-size: 16px;
   font-weight: 500;
-  color: var(--accent-light);
+  padding-top: 0px;
+  padding-bottom: 17px;
   
 }
 .hero h1 {
   white-space: nowrap;
 }
 
+  .scan {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
 @media (max-width: 480px) {
   .hero h1 {
     white-space: normal;
   }
+  .scan {
+    grid-template-columns: 1fr;
+  }
 }
+@media (max-width: 900px) {
+  .scan {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .scan {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 
@@ -241,12 +303,11 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Surajit <span>Mridha</span> <small>| INDIA</small></h1> 
+    <h1>Surajit <span>Mridha</span></h1>
+    <p class="hero-location">Kolkata, West Bengal, India, 700065</p>
     
     <p class="hero-subtitle">
-      JavaScript & MERN Stack Developer with hands-on experience in building
-      scalable, production-ready web applications using React, Node.js,
-      Express, and MongoDB.
+      Software Engineer | MERN Stack | Shopify | WordPress Developer
     </p>
 
     <div class="hero-btns">
@@ -259,11 +320,23 @@ footer {
     <div class="scan">
       <div class="scan-box">
         <h4>Role</h4>
-        <p>MERN Stack / JavaScript Developer</p>
+        <ul class="skill-list">
+  <li>Software Engineer</li>
+  <li>Web Developer</li>
+  <li>React Frontend Developer</li>
+  
+</ul>
       </div>
       <div class="scan-box">
         <h4>Core Skills</h4>
-        <p>React, Node.js, MongoDB, REST APIs</p>
+       <ul class="skill-list">
+  <li>MERN (Full Stack)</li>
+  <li>PHP</li>
+  <li>WordPress</li>
+  <li>Shopify</li>
+  <li>MySQL</li>
+</ul>
+
       </div>
       <div class="scan-box">
         <h4>Experience</h4>

@@ -16,6 +16,7 @@
   --card: #ffffff;
   --text: #0f172a;
   --muted: #64748b;
+  --text: #1c2d57;
 }
 
 * {
@@ -66,9 +67,13 @@ h2::after {
 .hero-content {
   max-width: 700px;
 }
-.hero-subtitle {
+
+.hero-title {
+  font-size: 22px;
+  font-weight: 500;
   color: #f8fafc;
-  
+  margin-top: 10px;
+  letter-spacing: 0.3px;
 }
 .hero h1 {
   font-size: 3.2rem;
@@ -175,6 +180,10 @@ h2::after {
 .about {
   max-width: 850px;
 }
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
 
 /* ---------- SKILLS ---------- */
 .skills-grid {
@@ -238,6 +247,7 @@ h2::after {
 .contact p {
   margin-bottom: 12px;
 }
+
 
 /* ---------- FOOTER ---------- */
 footer {
@@ -303,6 +313,12 @@ footer {
     font-size: 0.9rem;
   }
 }
+@media (max-width: 520px) {
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
 
 
 </style>
@@ -315,10 +331,7 @@ footer {
   <div class="hero-content">
     <h1>Surajit <span>Mridha</span></h1>
     <p class="hero-location">Kolkata, West Bengal, India, 700065</p>
-    
-    <h2 class="hero-subtitle">
-     Software Engineer | MERN (Full ) Stack | Shopify | WordPress Developer
-    </h2>
+    <h2 class="hero-title"> Software Engineer | JavaScript & MERN Stack | E-commerce Development</h2>
 
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Contact Me</a>
@@ -361,11 +374,10 @@ footer {
 <section>
   <h2>About Me</h2>
   <div class="about">
-    <p>
-    Software Engineer experienced in MERN Stack, React.js, Next.js, TypeScript, WordPress, and PHP, focused on building scalable, performance-optimized, and user-friendly web applications.
+    <p class="about-text">
+  Software Engineer with hands-on experience in <strong>MERN stack ,Next.js, and TypeScript,</strong>, React.js, along with a strong background in WordPress and PHP. Experienced in building scalable, performance-optimized, and user-centric web applications, with a focus on clean architecture and maintainable code.
+</p>
 
-🚀 Open to exciting Software Developer / Frontend / MERN opportunities.
-    </p>
   </div>
 </section>
 

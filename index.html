@@ -1,12 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surajit Mridha | Software Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root {
+:root {
   --primary: #2563eb;
   --accent: #f59e0b;
-  --accent-light: #fef3c7;
-  --bg: #f8fafc;
+  --bg: #f1f5f9;
   --card: #ffffff;
   --text: #0f172a;
   --muted: #64748b;
+  --border: #e2e8f0;
 }
 
 * {
@@ -22,9 +31,14 @@ body {
   line-height: 1.6;
 }
 
-/* GLOBAL SPACING SYSTEM */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+}
+
 section {
-  padding: 80px 8%;
+  padding: 80px 0;
 }
 
 h2 {
@@ -39,53 +53,52 @@ h2::after {
   height: 4px;
   background: var(--accent);
   position: absolute;
-  left: 0;
   bottom: -10px;
+  left: 0;
   border-radius: 4px;
 }
 
 /* HERO */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #020617, #1e3a8a);
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
   color: #fff;
 }
 
 .hero-content {
-  max-width: 720px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.8rem;
 }
 
-.hero h1 span {
+.hero span {
   color: var(--accent);
 }
 
 .hero-location {
-  color: #7dd3fc;
-  margin: 10px 0 15px;
+  color: #93c5fd;
+  margin: 10px 0;
 }
 
 .hero-title {
-  font-size: 18px;
-  font-weight: 400;
-  color: #e2e8f0;
-  margin-bottom: 25px;
+  font-size: 16px;
+  color: #cbd5f5;
+  margin-bottom: 20px;
+  max-width: 600px;
 }
 
 .hero-btns a {
   display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
-  margin-right: 12px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-right: 10px;
   margin-top: 10px;
   font-size: 14px;
-  transition: 0.25s;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -93,110 +106,79 @@ h2::after {
   color: #fff;
 }
 
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
 .btn-outline {
   border: 1px solid var(--accent);
   color: var(--accent);
 }
 
-.btn-outline:hover {
-  background: var(--accent-light);
-}
-
-/* SCAN SECTION */
+/* SCAN */
 .scan {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+  gap: 16px;
   margin-top: 40px;
 }
 
 .scan-box {
   background: var(--card);
   padding: 18px;
-  border-radius: 10px;
-  border-top: 4px solid var(--accent);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  transition: 0.2s;
-}
-
-.scan-box:hover {
-  transform: translateY(-4px);
+  border-radius: 8px;
+  border: 1px solid var(--border);
 }
 
 .skill-list li {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-size: 14px;
 }
 
 /* ABOUT */
-.about {
-  max-width: 800px;
-}
-
 .about-text {
   color: var(--muted);
+  max-width: 700px;
 }
 
 /* SKILLS */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
+  gap: 12px;
 }
 
 .skill {
   background: var(--card);
-  padding: 14px;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
   text-align: center;
   font-size: 14px;
-  border: 1px solid #e2e8f0;
-  transition: 0.2s;
-}
-
-.skill:hover {
-  border-color: var(--accent);
 }
 
 /* PROJECTS */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
 }
 
 .project {
   background: var(--card);
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
-  transition: 0.25s;
-}
-
-.project:hover {
-  transform: translateY(-6px);
-}
-
-.project h3 {
-  margin-bottom: 10px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
 }
 
 .project img {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
 /* TIMELINE */
 .timeline-item {
   background: var(--card);
-  padding: 18px;
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
+  padding: 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
   margin-bottom: 15px;
 }
 
@@ -205,14 +187,9 @@ h2::after {
   text-align: center;
 }
 
-.contact h2::after {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /* FOOTER */
 footer {
-  background: #020617;
+  background: #0f172a;
   color: #cbd5f5;
   text-align: center;
   padding: 20px;
@@ -220,215 +197,165 @@ footer {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  section {
-    padding: 60px 5%;
-  }
-
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
-  .hero-title {
-    font-size: 15px;
+  section {
+    padding: 60px 0;
   }
 }
 </style>
+</head>
+
+<body>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-
-    <!-- Identity -->
+  <div class="container hero-content">
     <h1>Surajit <span>Mridha</span></h1>
     <p class="hero-location">Kolkata, West Bengal, India</p>
 
-    <!-- Positioning -->
-    <h2 class="hero-title">
-      AI-Driven MERN Stack Engineer | React & Next.js (TypeScript) | GenAI & OpenAI Integrations
-    </h2>
+    <p class="hero-title">
+      AI-Driven MERN Stack Engineer | React & Next.js | GenAI & OpenAI Integration
+    </p>
 
-    <!-- CTA -->
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Work</a>
       <a href="#contact" class="btn-outline">Contact</a>
-      <a href="https://drive.google.com/file/d/11WQ25QWmH9mSlwGLJvBNsEr5z2sCLIER/view?usp=drive_link" target="_blank" class="btn-primary">
-        Resume
-      </a>
+      <a href="https://drive.google.com/file/d/11WQ25QWmH9mSlwGLJvBNsEr5z2sCLIER/view?usp=drive_link" target="_blank" class="btn-primary">Resume</a>
     </div>
 
-    <!-- Recruiter Scan -->
     <div class="scan">
-
       <div class="scan-box">
         <h4>Focus</h4>
         <ul class="skill-list">
-          <li>Frontend Engineering (React, Next.js)</li>
-          <li>AI-Integrated Web Applications</li>
-          <li>MERN Stack Development</li>
+          <li>React & Next.js</li>
+          <li>MERN Stack</li>
+          <li>AI Web Apps</li>
         </ul>
       </div>
 
       <div class="scan-box">
-        <h4>Core Stack</h4>
+        <h4>Stack</h4>
         <ul class="skill-list">
-          <li>React.js, Next.js, TypeScript</li>
-          <li>Node.js, Express.js, MongoDB</li>
-          <li>OpenAI APIs, AI Automation</li>
+          <li>Node.js, MongoDB</li>
+          <li>OpenAI APIs</li>
+          <li>REST APIs</li>
         </ul>
       </div>
 
       <div class="scan-box">
-        <h4>Strengths</h4>
+        <h4>Strength</h4>
         <ul class="skill-list">
-          <li>Performance Optimization</li>
-          <li>Reusable Architecture</li>
-          <li>SEO & Scalable UI Systems</li>
+          <li>Performance</li>
+          <li>Reusable Code</li>
+          <li>SEO Friendly</li>
         </ul>
       </div>
-
     </div>
-
   </div>
 </section>
-
 
 <!-- ABOUT -->
 <section>
-  <h2>About Me</h2>
-  <div class="about">
-
+  <div class="container">
+    <h2>About Me</h2>
     <p class="about-text">
-      Web Application Engineer specializing in building scalable, high-performance applications using 
-      <strong>React.js and modern JavaScript (ES6+)</strong>. Focused on delivering clean, maintainable 
-      architectures with strong emphasis on performance, accessibility, and user experience.
-      
-      <br><br>
-
-      Experienced with <strong>Next.js (SSR/SSG), REST API integrations, and advanced state management</strong>, 
-      enabling seamless, production-grade applications. Strong background in e-commerce systems 
-      (Shopify, WordPress) with attention to SEO and business impact.
-
-      <br><br>
-
-      Currently advancing expertise in <strong>OpenAI APIs, Generative AI, and AI-driven web applications 
-      using the MERN stack</strong>, building intelligent chatbot systems and automation-driven solutions.
+      Web Application Engineer focused on building scalable applications using React.js and modern JavaScript. 
+      Experienced in Next.js, API integration, and performance optimization. 
+      Currently working on AI-driven web apps using OpenAI APIs and MERN stack.
     </p>
-
   </div>
 </section>
-
 
 <!-- SKILLS -->
 <section>
-  <h2>Technical Skills</h2>
+  <div class="container">
+    <h2>Technical Skills</h2>
 
-  <div class="skills-grid">
-    <div class="skill">React.js, Next.js, TypeScript</div>
-    <div class="skill">JavaScript (ES6+), Node.js, Express.js</div>
-    <div class="skill">MongoDB, MySQL</div>
-    <div class="skill">OpenAI APIs, GenAI, AI Automation</div>
-    <div class="skill">REST APIs, Hooks, State Management</div>
-    <div class="skill">HTML5, CSS3, Responsive Design</div>
-    <div class="skill">Git, GitHub, Agile Workflow</div>
+    <div class="skills-grid">
+      <div class="skill">React.js / Next.js</div>
+      <div class="skill">Node.js / Express</div>
+      <div class="skill">MongoDB</div>
+      <div class="skill">OpenAI / GenAI</div>
+      <div class="skill">REST APIs</div>
+      <div class="skill">HTML / CSS</div>
+      <div class="skill">Git / GitHub</div>
+    </div>
   </div>
 </section>
-
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2>Projects</h2>
+  <div class="container">
+    <h2>Projects</h2>
 
-  <div class="project-grid">
+    <div class="project-grid">
 
-    <div class="project">
-      <h3>MERN Authentication System</h3>
-      <img src="images/user-login.jpeg" alt="project" style="width:100%; border-radius:8px; margin-bottom:10px;">
-      <p>
-        Built a secure authentication system with user management, protected routes, and API-based architecture. 
-        Designed for scalability with clean separation of frontend and backend.
-      </p>
+      <div class="project">
+        <h3>MERN Authentication</h3>
+        <img src="images/user-login.jpeg">
+        <p>Secure login system with authentication and API backend.</p>
+      </div>
+
+      <div class="project">
+        <h3>E-Commerce App</h3>
+        <img src="images/shop_easy.png">
+        <p>
+          React-based e-commerce app with cart and search features.
+          <br><br>
+          <a href="https://e-shop-sigma-sooty.vercel.app">Live Demo</a>
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Product Dashboard</h3>
+        <img src="images/Product-dashboard.jpg">
+        <p>
+          Full-stack dashboard with CRUD and API integration.
+          <br><br>
+          <a href="https://github.com/dev570-admin/Mern-Project">GitHub</a>
+        </p>
+      </div>
+
     </div>
-
-    <div class="project">
-      <h3>React E-Commerce Application</h3>
-      <img src="images/shop_easy.png" alt="project" style="width:100%; border-radius:8px; margin-bottom:10px;">
-      <p>
-        Developed a component-driven e-commerce platform featuring dynamic product search, cart management, 
-        and optimized UI rendering. Integrated API-based product fetching and implemented AI chatbot features.
-        <br><br>
-        <a href="https://e-shop-sigma-sooty.vercel.app">Live Demo</a>
-      </p>
-    </div>
-
-    <div class="project">
-      <h3>MERN Product Dashboard</h3>
-      <img src="images/Product-dashboard.jpg" alt="project" style="width:100%; border-radius:8px; margin-bottom:10px;">
-      <p>
-        Designed a full-stack dashboard with product management, image uploads, and scalable API structure. 
-        Focused on performance and modular backend architecture.
-        <br><br>
-        <a href="https://github.com/dev570-admin/Mern-Project">GitHub</a>
-      </p>
-    </div>
-
-    <div class="project">
-      <h3>Portfolio Website</h3>
-      <img src="images/Product-dashboard.jpg" alt="project" style="width:100%; border-radius:8px; margin-bottom:10px;">
-      <p>
-        Built a responsive, ATS-friendly portfolio using semantic HTML and scalable UI principles, 
-        optimized for recruiter experience and performance.
-      </p>
-    </div>
-
   </div>
 </section>
-
 
 <!-- EXPERIENCE -->
 <section>
-  <h2>Professional Experience</h2>
-
-  <div class="timeline">
+  <div class="container">
+    <h2>Experience</h2>
 
     <div class="timeline-item">
-      <h3>MERN Stack Developer</h3>
-      <p>
-        Delivered full-stack applications including frontend architecture, backend APIs, authentication systems, 
-        and database integration. Focused on scalable and maintainable system design.
-      </p>
+      <h3>MERN Developer</h3>
+      <p>Worked on full-stack apps with API and database integration.</p>
     </div>
 
     <div class="timeline-item">
-      <h3>WordPress / Shopify Developer</h3>
-      <p>
-        Built and optimized e-commerce platforms, improving performance, SEO, and user experience while 
-        collaborating with cross-functional teams.
-      </p>
+      <h3>Shopify / WordPress</h3>
+      <p>Built e-commerce sites with performance optimization.</p>
     </div>
 
   </div>
 </section>
 
-
 <!-- CONTACT -->
 <section id="contact" class="contact">
-  <h2>Contact</h2>
+  <div class="container">
+    <h2>Contact</h2>
 
-  <p>
-    <a href="mailto:mridhasurajit570@gmail.com">Email: mridhasurajit570@gmail.com</a>
-  </p>
-
-  <p>Phone: <b>+91 8910 37 6844</b></p>
-
-  <p>
-    <a href="https://github.com/dev570-admin/">GitHub</a>
-  </p>
-
-  <p>
-    <a href="https://www.linkedin.com/in/surajit-mridha-212978209/">LinkedIn</a>
-  </p>
+    <p>Email: <a href="mailto:mridhasurajit570@gmail.com">mridhasurajit570@gmail.com</a></p>
+    <p>Phone: <b>+91 8910 37 6844</b></p>
+    <p><a href="https://github.com/dev570-admin/">GitHub</a></p>
+    <p><a href="https://www.linkedin.com/in/surajit-mridha-212978209/">LinkedIn</a></p>
+  </div>
 </section>
 
-
 <footer>
-  © 2026 Surajit Mridha · Software Engineer · MERN Stack Developer
+  © 2026 Surajit Mridha · Software Engineer
 </footer>
+
+</body>
+</html>
